@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const intialState = {
+const initialState = {
     'contries' : [
         {id : "MO", name : "Morocoo"},
         {id : "USA", name : "United state"},
@@ -8,9 +8,9 @@ const intialState = {
     ]
 };
 
-export const contrySlice = createSlice({
+const contrySlice = createSlice({
     name : 'contries',
-    state : intialState,
+    state : initialState,
     reducers : {
         find : (state, action) => {
             state.contries = [
@@ -20,14 +20,12 @@ export const contrySlice = createSlice({
             ];
             state.contries = state.contries.filter(item => item.id === action.payload );
         },
-
         show : (state, action) => {
             state.contries.push(action.payload);
         },
-
         deleteById : (state, action) => {
             state.contries.filter(item => item.id !== action.payload)
-        },
+        }
     },
 })
 
