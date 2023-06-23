@@ -7,7 +7,6 @@ import './app.css';
 function App() {
 
   const contries = useSelector(state => state.contries.contries);
-  console.log('hello world' , contries);
 
   return (
     <div className='app'>
@@ -21,10 +20,10 @@ function App() {
             <th> name </th>
           </tr>
           {
-            // contries.map(item => <tr>
-            //   <td> {item.id} </td>
-            //   <td> {item.name} </td>
-            // </tr>)
+            contries.map(item => <tr>
+              <td> {item.id} </td>
+              <td> {item.name} </td>
+            </tr>)
           }
         </table>
       </div>
